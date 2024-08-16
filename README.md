@@ -34,6 +34,14 @@ Currently, I do not yet need a DB server to store any data with these basic feat
 
 +Trends/history from other languages.
 
+**Limitation**
+
+Only scrape the first page from Bing because the remaining pages are JavaScript-Rendered.
+
+In the context of WebAPI Server, we can consider some third-party services like ScraperAPI, ScrapingBee, and Scrapy that can handle JavaScript-heavy pages.
+
+Or we can use WebBrowser from Winform Application to scrape JavaScript-Rendered pages and push all HTML content to the WebAPI Server.
+
 **Questions?**
 
 If you have any questions, please let me know at my email: trieutulong89kg@gmail.com
