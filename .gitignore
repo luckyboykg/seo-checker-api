@@ -1,0 +1,11 @@
+SeoCheckerApi/obj/
+SeoCheckerApi/bin/
+.vs/
+Application/bin/
+Application/obj/
+Domain/bin/
+Domain/obj/
+Infrastructure/obj/
+Tests/bin/
+Tests/obj/
+Infrastructure/bin/
