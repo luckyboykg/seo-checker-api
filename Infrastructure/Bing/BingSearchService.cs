@@ -1,4 +1,5 @@
 ﻿using Domain.Constant;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Infrastructure.Bing
@@ -27,13 +28,13 @@ namespace Infrastructure.Bing
             }
 
             var totalPages = totalResults / MaxItemsPerPage;
-            var htmlContent = string.Empty;
+            var htmlContent = new StringBuilder();
             for (int pageNumber = 0; pageNumber < totalPages; pageNumber++)
             {
-                htmlContent += await SearchBingAsync(searchPhrase, pageNumber);
+                htmlContent.Append(await SearchBingAsync(searchPhrase, pageNumber));
             }
 
-            var positions = GetPositions(htmlContent, url, totalResults);
+            var positions = GetPositions(htmlContent.ToString(), url, totalResults);
             return positions.Count > 0 ? string.Join(", ", positions) : "0";
         }
 
