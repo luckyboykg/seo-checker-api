@@ -12,7 +12,7 @@ using SeoCheckerApi.Handler;
 var builder = WebApplication.CreateBuilder(args);
 
 ConfigureServices(builder);
-ConfigureCors(builder);
+ConfigureCqrs(builder);
 
 var app = builder.Build();
 
@@ -45,7 +45,7 @@ void ConfigureServices(WebApplicationBuilder builder)
     builder.Services.AddScoped<IBingSearchService, BingSearchService>();
 }
 
-void ConfigureCors(WebApplicationBuilder builder)
+void ConfigureCqrs(WebApplicationBuilder builder)
 {
     builder.Services.AddMediatR(p => p.RegisterServicesFromAssembly(typeof(GetSeoInfoFromGoogleRequest).Assembly));
     builder.Services.AddMvc(options => { options.Filters.Add(new BadRequestActionFilter()); });
